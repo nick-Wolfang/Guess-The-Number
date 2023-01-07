@@ -34,6 +34,7 @@ function playGame(){
     console.log(numberGuess);
     displayResult(numberGuess);
     saveGuessHistory(numberGuess);
+    displayHistory();
 }
 
 function displayResult(numberGuess) {
@@ -68,13 +69,17 @@ function getRandomNumber(){
 
 function saveGuessHistory(guess) {
   var list = guessList.push(guess);
-  console.log(guessList);
+  // console.log(guessList);
 }
 
 function displayHistory() {
   let index; // TODO
   let list = "<ul class='list-group'>";
-  // *CODE GOES BELOW HERE *
+  for(let i=0; i<guessList.length; i++) {
+    list += "<li class='list-group-item'> " + "you guessed" + guessList[i]+ "</li>";
+    console.log(guessList[i]);
+    
+  }
   list += '</ul>'
   document.getElementById("history").innerHTML = list;
 }
