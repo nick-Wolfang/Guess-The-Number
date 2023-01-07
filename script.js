@@ -55,6 +55,10 @@ function displayResult(numberGuess) {
 
 function initGame(){
   // *CODE GOES BELOW HERE *
+  correctNumber = getRandomNumber();
+  document.getElementById("result").innerHTML = "";
+  guessList = [];
+  displayHistory();
 }
 
 function resetResultContent(){
@@ -75,9 +79,11 @@ function saveGuessHistory(guess) {
 function displayHistory() {
   let index; // TODO
   let list = "<ul class='list-group'>";
-  for(let i=0; i<guessList.length; i++) {
-    list += "<li class='list-group-item'> " + "you guessed" + guessList[i]+ "</li>";
-    console.log(guessList[i]);
+  guessListReverse = guessList.reverse();
+  for(let i=0; i<guessListReverse.length; i++) {
+    guessListReverse.reverse
+    list += "<li class='list-group-item'> " + "you guessed " + guessListReverse[i]+ "</li>";
+    console.log(guessListReverse[i]);
     
   }
   list += '</ul>'
