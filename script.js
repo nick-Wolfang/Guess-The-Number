@@ -20,9 +20,9 @@ console.log(correctNumber);
 window.onload = function() {
     document.getElementById("number-submit").addEventListener("click", playGame);
     document.getElementById("restart-game").addEventListener("click", initGame);
-    showYouWon();
-    showNumberAbove();
-    showNumberBelow();
+    // showYouWon();
+    // showNumberAbove();
+    // showNumberBelow();
 }
 
 /** 
@@ -43,12 +43,19 @@ function playGame(){
 // *CODE GOES BELOW HERE *
 
 function displayResult(numberGuess) {
-    if( numberGuess < correctNumber )
+    if( numberGuess < correctNumber ) {
         console.log("Too Low");
-    else if( numberGuess > correctNumber )
-        console.log("Too High");
+        showNumberBelow();
+    }
+    else if( numberGuess > correctNumber ){
+      console.log("Too High");
+      showNumberAbove();
+    }
     else
+      {
         console.log("Correct");
+        showYouWon();
+      }
 }
 
 /**
